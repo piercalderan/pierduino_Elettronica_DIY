@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ARDUINO TERMOMETRO ONLINE</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body bgcolor="#CCCCCC" >
+<font face="Verdana">
+<h1>ARDUINO TERMOMETRO ONLINE</h1>
+<img src="termo.png"><br><br>
+<script language="javascript">
+var month=new Array();
+month[0]="Gennaio";
+month[1]="Febbraio";
+month[2]="Marzo";
+month[3]="Aprile";
+month[4]="Maggio";
+month[5]="Giugno";
+month[6]="Luglio";
+month[7]="Agosto";
+month[8]="Settembre";
+month[9]="Ottobre";
+month[10]="Novembre";
+month[11]="Dicembre";
+var d = new Date();
+document.write("<BR><b>Data:</b> ", d.getDate(),"  ",month[d.getMonth()],"  ",d.getFullYear());
+document.write("<BR><b>Ore:</b> ", d.getHours(),":",d.getMinutes());
+</script>
+<a href="led.htm"><h2>CONTROLLO LED</h2></a>
+
+</body></html>

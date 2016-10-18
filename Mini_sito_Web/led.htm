@@ -1,0 +1,148 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ARDUINO CONTROLLO LED</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+body {
+	font-family: sans-serif;
+	font-weight: normal;
+	margin: 10px;
+	color: #555;
+	background-color: #eee;
+}
+form
+{
+	margin: 40px 0;
+}
+
+div
+{
+	clear: both;
+	margin: 0 50px;
+}
+
+input.switch:empty
+{
+	margin-left: -999px;
+}
+input.switch:empty ~ label
+{
+	position: relative;
+	float: left;
+	line-height: 1.6em;
+	text-indent: 4em;
+	margin: 0.2em 0;
+	cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+input.switch:empty ~ label:before, input.switch:empty ~ label:after
+{
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	content: ' ';
+	width: 3.6em;
+	background-color: #ccc;
+	border-radius: 0.3em;
+	box-shadow: inset 0 0.2em 0 rgba(0,0,0,0.3);
+	-webkit-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
+}
+input.switch:empty ~ label:after
+{
+	width: 1.4em;
+	top: 0.1em;
+	bottom: 0.1em;
+	margin-left: 0.1em;
+	background-color: #fff;
+	border-radius: 0.15em;
+	box-shadow: inset 0 -0.2em 0 rgba(0,0,0,0.2);
+}
+input.switch:checked ~ label:before
+{
+	background-color: #c33;
+}
+input.switch:checked ~ label:after
+{
+	margin-left: 2.1em;
+}
+}
+</style>
+</head>
+<body bgcolor="#CCCCCC">
+<font face="Verdana">
+<h1>ARDUINO CONTROLLO LED ONLINE</h1>
+<form method="get" action="#">
+<div>
+<input type="checkbox" id="switch1" name="1" class="switch" OnClick="fun(2);"/>
+<label for="switch1">LED PIN 2</label>
+</div>
+<div>	
+<input type="checkbox" id="switch2" name="2" class="switch" OnClick="fun(3);"/>
+<label for="switch2">LED PIN 3</label>
+</div>
+<div>	
+<input type="checkbox" id="switch3" name="3" class="switch" OnClick="fun(5);"/>
+<label for="switch3">LED PIN 5</label>
+</div>
+<div>	
+<input type="checkbox" id="switch4" name="4" class="switch" OnClick="fun(6);"/>
+<label for="switch4">LED PIN 6</label>
+</div>
+<div>	
+<input type="checkbox" id="switch5" name="5" class="switch" OnClick="fun(7);"/>
+<label for="switch5">LED PIN 7</label>
+</div>
+<div>	
+<input type="checkbox" id="switch6" name="6" class="switch" OnClick="fun(8);"/>
+<label for="switch6">LED PIN 8</label>
+</div>
+<div>	
+<input type="checkbox" id="switch7" name="7" class="switch" OnClick="fun(9);"/>
+<label for="switch7">LED PIN 9</label>
+</div>
+
+</form>
+
+
+<script language="javascript">
+function fun(str)
+{
+document.location = "led.htm?ID="+str;
+}
+
+var pippo=getQSParam('ID');
+			
+			if (pippo==2)
+			document.getElementById("switch1").checked=true;
+			if (pippo==3) 
+			document.getElementById("switch2").checked=true;
+			if (pippo==5)
+			document.getElementById("switch3").checked=true;
+			if (pippo==6)
+			document.getElementById("switch4").checked=true;
+			if (pippo==7)
+			document.getElementById("switch5").checked=true;
+			if (pippo==8)
+			document.getElementById("switch6").checked=true;
+			if (pippo==9)
+			document.getElementById("switch7").checked=true;
+
+
+function getQSParam(ParamName) {
+  QS=window.location.toString(); 
+  var indSta=QS.indexOf(ParamName); 
+  if (indSta==-1 || ParamName=="") return null; 
+  var indEnd=QS.indexOf('&amp;',indSta); 
+  if (indEnd==-1) indEnd=QS.length; 
+  var valore = unescape(QS.substring(indSta+ParamName.length+1,indEnd)); 
+  return valore; 
+  }
+</script>
+<a href="index.htm"><h2>CONTROLLO TEMPERATURA</h2></a>
+</body></html>
